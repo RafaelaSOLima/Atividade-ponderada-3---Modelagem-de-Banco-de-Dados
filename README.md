@@ -18,3 +18,24 @@
 | filtro_de_publicação       | Essa tabela armazena de forma binária, com a intenção de booleana, pois faremos um filtro, para que a pessoa selecione o tipo de causa a que a publicação pertence e quais publicações prefere ver                  |
 | interações_da_publicação               | Nessa tabela ficam amazenadas as curtidas, comentários, republicações ... As metricas de popularidade           |
 | Informações_de_ usuário          | Aqui ficam os dados coletados na criação da conta, e referem-se ao próprio usuário                    |
+
+## Relções entre as Tabelas:
+
+### informações_de_usuários 1:N (1:5)
+&nbsp;&nbsp;&nbsp;&nbsp; informações_de_usuários está conectado a: publicação_do_feed_faça_você_mesmo, publicações_do_feed_comum,  interações_da_publicação, publicações_do_feed e refizeram_o_projeto.
+
+### publicação_do_feed_faça_você_mesmo 1:N (1:2)
+ &nbsp;&nbsp;&nbsp;&nbsp; publicação_do_feed_faça_você_mesmo está conectado a: refizeram_o_projeto e  publicações_do_feed. 
+ 
+### publicações_do_feed_comum 1:1
+ &nbsp;&nbsp;&nbsp;&nbsp; publicações_do_feed_comum está conectado apenas a publicações_do_feed. 
+ 
+### refizeram_o_projeto 1:1
+ &nbsp;&nbsp;&nbsp;&nbsp;  refizeram_o_projeto está conectado apenas a publicação_do_feed_faça_você_mesmo 
+ 
+### filtro_de_publicação 1:1
+ &nbsp;&nbsp;&nbsp;&nbsp; filtro_de_publicação está conectado apenas a publicação_do_feed_faça_você_mesmo
+ 
+### interações_da_publicação 1:N (1:2)
+ &nbsp;&nbsp;&nbsp;&nbsp; interações_da_publicação está conectado a: publicações_do_feed_comum e publicação_do_feed_faça_você_mesmo.
+ 
